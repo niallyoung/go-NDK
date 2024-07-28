@@ -32,6 +32,11 @@ cover:
 	./.meta/cover.sh
 .PHONY: cover
 
+vuln:
+	@echo "######## make vuln"
+	go run golang.org/x/vuln/cmd/govulncheck@v1.1.3 ./...
+.PHONY: vuln
+
 docker.build:
 	@echo "######## make docker.build"
 	docker build . \
